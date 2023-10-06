@@ -6,8 +6,6 @@
  */
 int main(void)
 {
-	char message;
-	message = "and that piece of art is useful\" - Dora Korper, 2015-10-19\n";
-	write(2, message);
+	write(2, "and that piece of art is useful\" - Dora Korper, 2015-10-19\n");
 	return (1);
 }
