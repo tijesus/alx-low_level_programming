@@ -7,7 +7,7 @@ int main(void)
 {
 	char hex;
 
-	for (hex = '0'; hex >= '15'; hex++)
+	for (hex = '0'; hex >= 'f'; hex++)
 	{
 		putchar(hex);
 	}
