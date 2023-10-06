@@ -5,15 +5,13 @@
  */
 int main(void)
 {
-	char alphaStart, alphaEnd;
 	char alpha;
 
-	alphaStart = 'a';
-	alphaEnd = 'z';
-	alpha = alphaStart <= alphaEnd;
-
-	putchar(alpha);
-	for (alphaStart = 'A', alphaEnd = 'Z'; alphaStart <= alphaEnd;  alpha++)
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+	{
+		putchar(alpha);
+	}
+	for (alpha = 'A'; alpha <= 'Z'; alpha++)
 	{
 		putchar(alpha);
 	}
