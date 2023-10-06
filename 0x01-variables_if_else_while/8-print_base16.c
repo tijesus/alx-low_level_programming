@@ -9,7 +9,13 @@ int main(void)
 
 	for (hex = '0'; hex >= 'f'; hex++)
 	{
-		putchar(hex);
+		if (hex >= 'a' && hex <= 'f')
+		{
+			putchar(hex);
+		} else if (hex >= '0' && hex <= '9')
+		{
+			putchar(hex);
+		}
 	}
 	putchar('\n');
 	return (0);
