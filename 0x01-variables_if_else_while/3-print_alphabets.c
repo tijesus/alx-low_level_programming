@@ -5,20 +5,18 @@
  */
 int main(void)
 {
-	char alphaStart, alphaEnd, alpha;
+	char alphaStart, alphaEnd;
+	char alpha;
 
 	alphaStart = 'a';
 	alphaEnd = 'z';
+	alpha = alphaStart <= alphaEnd;
 
-	do {
+	putchar(alpha);
+	for (alphaStart = 'A', alphaEnd = 'Z'; alphaStart <= alphaEnd;  alpha++)
+	{
 		putchar(alpha);
-	} while (alphaStart <= alphaEnd);
-		continue;
-	alphaStart = 'A'
-	alphaEnd = 'Z'
-	do {
-		putchar(alpha);
-	} while (alphaStart <= alphaEnd);
+	}
 
 	putchar('\n');
 	return (0);
