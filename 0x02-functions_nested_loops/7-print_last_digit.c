@@ -1,12 +1,18 @@
 #include "main.h"
 /**
  * print_last_digit - print last digit
- * @lastDigit: variable argu
+ * @number: variable argu
  * Return: 0 success
  */
-int print_last_digit(int lastDigit)
+int print_last_digit(int number)
 {
-	_putchar(lastDigit % 10);
-	return (0);
+	if (number >= 0)
+		_putchar(number % 10);
+	else if (number < 0)
+	{
+		_putchar(number % 10);
+		return (-number);
+	}
 
+	return (0);
 }
