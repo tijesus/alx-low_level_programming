@@ -1,23 +1,18 @@
 #include "main.h"
 /**
- * print_last_digit - print last digit
- * @number: variable argu
- * Return: 0 success
- */
-int print_last_digit(int number)
+ *  * print_last_digit - print last digit
+ *   * @a: output last digit
+ *    * Return: last digits
+ *     */
+int print_last_digit(int a)
 {
-	int lastDigit;
-
-	lastDigit = number % 10;
-
-	if (number < 0)
+	int b;
+	
+	b = a % 10;
+	if (a < 10)
 	{
-		lastDigit = -lastDigit;
-		_putchar(lastDigit + '0');
-		return (lastDigit);
-	} else if (number >= 0)
-	{
-		_putchar(lastDigit + '0');
+		b = b * -1;
 	}
-	return (0);
+	_putchar(b + '0');
+	return (b);
 }
