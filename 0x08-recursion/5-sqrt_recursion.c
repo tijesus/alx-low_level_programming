@@ -3,6 +3,7 @@
  * _sqrt - square root
  * @a: value
  * @b: square root
+ * Return: 0 success
  */
 int _sqrt(int a, int b)
 {
