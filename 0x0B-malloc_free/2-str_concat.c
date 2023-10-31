@@ -14,13 +14,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		len++;
 	}
-	printf("%d\n", len);
 	while (s2[i] != '\0')
 	{
 		i++;
 		len++;
 	}
-	printf("%d\n", len);
 	ptr = (char *)(malloc((len + 1) * sizeof(char)));
 
 	if (ptr == NULL)
