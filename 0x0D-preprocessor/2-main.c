@@ -5,7 +5,8 @@
  * main - entry point
  * Return: 0 success
 */
-int main(void) {
-    printf("%s\n", NAME);
-    return (0);
+int main(void)
+{
+	printf("%s\n", NAME);
+	return (0);
 }
