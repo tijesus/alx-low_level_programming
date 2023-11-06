@@ -1,5 +1,4 @@
 #include <stdio.h>
-#define NAME "02-main.c"
 
 /**
  * main - entry point
@@ -7,6 +6,6 @@
 */
 int main(void)
 {
-	printf("%s\n", NAME);
+	printf("%s\n", __FILE__);
 	return (0);
 }
