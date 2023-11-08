@@ -17,14 +17,8 @@ int int_index(int *array, int size, int (*cmp)(int))
 	}
 	for (i = 0; i < size; i++)
 	{
-		if (cmp(array[i]))
+		if (cmp(array[i]) != 0)
 			return (i);
-		if (isdigit(cmp(array[i])) == 0)
-			cmp(array[i]);
-		else if ((cmp(array[i])) < 0)
-			cmp(array[i]);
-		else
-			return (-1);
 	}
-	return (cmp(array[i]));
+	return (-i);
 }
