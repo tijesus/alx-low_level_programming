@@ -3,11 +3,11 @@
 #include <stdio.h>
 
 /**
- * op_add - add two numbers
+ * op_add - addition
  * @a: first number
  * @b: second number
  *
- * Return: The result.
+ * Return: 0 success
  */
 int op_add(int a, int b)
 {
@@ -15,11 +15,11 @@ int op_add(int a, int b)
 }
 
 /**
- * op_sub - Calate the difference between two numbers.
+ * op_sub - substraction
  * @a: first number
  * @b: second number
  *
- * Return: The result.
+ * Return: 0 succcess
  */
 int op_sub(int a, int b)
 {
@@ -27,11 +27,11 @@ int op_sub(int a, int b)
 }
 
 /**
- * op_mul - Caculate the multiplication between two numbers.
+ * op_mul - multiplication
  * @a: first number
  * @b: second number
  *
- * Return: The result.
+ * Return: 0 success
  */
 int op_mul(int a, int b)
 {
@@ -39,11 +39,11 @@ int op_mul(int a, int b)
 }
 
 /**
- * op_div - Caculate the division between two numbers.
+ * op_div - division
  * @a: first number
  * @b: second number
  *
- * Return: The result.
+ * Return: 0 success
  */
 int op_div(int a, int b)
 {
@@ -54,11 +54,11 @@ int op_div(int a, int b)
 }
 
 /**
- * op_mod - Caculate the module between two numbers.
+ * op_mod - remainder
  * @a: first number
  * @b: second number
  *
- * Return: The result.
+ * Return: 0 success
  */
 int op_mod(int a, int b)
 {

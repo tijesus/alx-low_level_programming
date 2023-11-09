@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - Identify function to use.
- * @s: Charater of operator.
+ * get_op_func - function to select symbol
+ * @s: pointer to select operation
  *
  * Return: A functio.
  */

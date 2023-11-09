@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- * main - Calculate basic operation between two numbers.
- * @argc: Number of arguments.
- * @argv: Array of arguments.
+ * main - Entry point
+ * @argc: argument parameter
+ * @argv: Avector parameter
  * Return: 0 succes.
  */
 int main(int argc, char *argv[])

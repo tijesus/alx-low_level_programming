@@ -5,10 +5,10 @@
 #include <stdlib.h>
 
 /**
- * struct op - Struct op
+ * struct op - struct to function
  *
- * @op: The operator
- * @f: The function associated
+ * @op: sturcture name
+ * @f: pointer to struct
  */
 typedef struct op
 {
@@ -23,4 +23,4 @@ int op_div(int a, int b);
 int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
 
-#endif /*CAL_H*/
+#endif
