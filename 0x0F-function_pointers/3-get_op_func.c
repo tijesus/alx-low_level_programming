@@ -1,56 +1,33 @@
+#include <stdio.h>
 #include "3-calc.h"
+#include <stdlib.h>
 
 /**
- * op_add - function to add
- * @a: first value
- * @b: secod value
- * Return: 0 success
-*/
-int op_add(int a, int b)
+ * get_op_func - Identify function to use.
+ * @s: Charater of operator.
+ *
+ * Return: A functio.
+ */
+int (*get_op_func(char *s))(int, int)
 {
-	return (a + b);
-}
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-/**
- * op_sub - function to add
- * @a: first value
- * @b: secod value
- * Return: 0 success
-*/
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
-
-/**
- * op_mul - function to add
- * @a: first value
- * @b: secod value
- * Return: 0 success
-*/
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-
-/**
- * op_div - function to add
- * @a: first value
- * @b: secod value
- * Return: 0 success
-*/
-int op_div(int a, int b)
-{
-	return (a / b);
-}
-
-/**
- * op_mod - function to add
- * @a: first value
- * @b: secod value
- * Return: 0 success
-*/
-int op_mod(int a, int b)
-{
-	return (a % b);
+	while (i < 5)
+	{
+		if (*ops[i].op == *s && *(s + 1) == 0)
+		{
+			return (ops[i].f);
+		}
+		i++;
+	}
+	printf("Error\n");
+	exit(99);
 }
