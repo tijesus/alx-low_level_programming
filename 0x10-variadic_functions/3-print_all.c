@@ -33,6 +33,7 @@ void print_all(const char * const format, ...)
 				if (str == NULL)
 					str = ("(nil)");
 				printf("%s", str);
+				check = 0;
 				break;
 			default:
 				check = 1;
