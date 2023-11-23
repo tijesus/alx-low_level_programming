@@ -9,7 +9,8 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i;
 
-	/* condition for index exceeding bit after converting from 
+	/*
+	* condition for index exceeding bit after converting from
 	* byte to bit
 	*/
 	if (index > sizeof(size_t) * 8)
