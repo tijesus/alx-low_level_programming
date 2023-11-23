@@ -7,11 +7,14 @@
 */
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	/*mask to 1 for setting values*/
 	unsigned long int mask = 1 << index;
 
+	/*checking index and converting from 8byte to 64bits*/
 	if (index > sizeof(size_t) * 8)
 		return (-1);
 
+	/*command to set value at the index to 1*/
 	*n = ((*n) | mask);
 	return (1);
 }
