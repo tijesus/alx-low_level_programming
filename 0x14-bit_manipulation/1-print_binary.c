@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * binary - function to print binary
- * @n: number to 
+ * @n: number to
  */
 void binary(unsigned long int n)
 {
