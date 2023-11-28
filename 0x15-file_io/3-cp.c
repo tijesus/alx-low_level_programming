@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int file_from, file_to, close_error;
 	ssize_t no_read = 1024, no_write;
-	char buf[1024];
+	char temp_holder[1024];
 
 	if (argc != 3)
 	{
@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 
 	while (no_read == 1024)
 	{
-		no_read = read(file_from, buf, 1024);
+		no_read = read(file_from, temp_holder, 1024);
 		if (no_read == -1)
 			handle_error(-1, 0, argv);
-		no_write = write(file_to, buf, no_read);
+		no_write = write(file_to, temp_holder, no_read);
 			if (no_write == -1)
 			handle_error(0, -1, argv);
 	}
