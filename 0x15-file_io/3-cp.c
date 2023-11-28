@@ -1,6 +1,6 @@
 #include "main.h"
 
-void handle_error(int file_from, int file_to, char **argv);
+void handle_error(int file_from, int file_to, char *argv[1]);
 /**
  * main - entry point;
  * @argc: count number of arguement
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
  * @file_to: seccond file in the command line
  * @argv: pointer to handle aregument passed to command line
 */
-void handle_error(int file_from, int file_to, char **argv)
+void handle_error(int file_from, int file_to, char *argv[1])
 {
 	if (file_from == -1)
 	{
@@ -62,7 +62,7 @@ void handle_error(int file_from, int file_to, char **argv)
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", (*argv + 1));
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 		exit(99);
 	}
 }
