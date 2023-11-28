@@ -1,47 +1,48 @@
 #include "main.h"
 
-void handle_error(int file_from, int file_to, char *argv[1]);
+void handle_error(int file_from, int file_to, char *argv[]);
 /**
  * main - entry point;
  * @argc: count number of arguement
  * @argv: arguement array
  * Return: 0 on success
 */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int file_from, file_to, end_err;
+	int file_from, file_to, close_error;
 	ssize_t no_read = 1024, no_write;
-	char temp_holder[1024];
+	char buf[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
+
 	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT | O_APPEND, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	handle_error(file_from, file_to, argv);
 
-	/*check the number of character to copy*/
 	while (no_read == 1024)
 	{
-		no_read = read(file_from, temp_holder, 1024);
+		no_read = read(file_from, buf, 1024);
 		if (no_read == -1)
 			handle_error(-1, 0, argv);
-		no_write = write(file_to, temp_holder, no_read);
-		if (no_write == -1)
+		no_write = write(file_to, buf, no_read);
+			if (no_write == -1)
 			handle_error(0, -1, argv);
 	}
-	end_err = close(file_from);
-	if (end_err == -1)
+
+	close_error = close(file_from);
+	if (close_error == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	end_err = close(file_to);
-		if (end_err == -1)
+	close_error = close(file_to);
+	if (close_error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 	return (0);
@@ -53,16 +54,16 @@ int main(int argc, char **argv)
  * @file_to: seccond file in the command line
  * @argv: pointer to handle aregument passed to command line
 */
-void handle_error(int file_from, int file_to, char *argv[1])
+void handle_error(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *argv);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
