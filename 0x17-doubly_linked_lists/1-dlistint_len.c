@@ -6,16 +6,10 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *temp;
-	size_t count = 0;
+	size_t n_nodes = 0;
 
-	temp = h;
-	while (h != NULL)
-		h = h->prev;
-	while (temp != NULL)
-	{
-		temp = temp->next;
-		count++;
-	}
-	return (count);
+	for (; h; h = h->next)
+		n_nodes++;
+
+	return (n_nodes);
 }
