@@ -1,3 +1,3 @@
 #!/bin/bash
 wget -P .. https://raw.githubusercontent.com/tijesus/alx-low_level_programming/master/0x18-dynamic_libraries/libwin.so
-export L_PRELOA="$PWD/ ../libwin.so
+export L_PRELOAD="$PWD/ ../libwin.so
