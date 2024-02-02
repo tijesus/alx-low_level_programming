@@ -17,20 +17,20 @@ typedef struct hash_node_s
 	char *key;
 	char *value;
 	struct hash_node_s *next;
-}hash_node_t;
+} hash_node_t;
 
 /**
  * struct hash_table_s - hash table structure
  * @size: size of the array
  * @array: pointer to the pointer of the first node of
  * array of a size
- * 
+ *
 */
 typedef struct hash_table_s
 {
 	int size;
 	hash_node_t **array;
-}hash_table_t;
+} hash_table_t;
 
 
 hash_table_t *hash_table_create(unsigned long int size);
