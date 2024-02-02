@@ -25,7 +25,6 @@ typedef struct hash_node_s
  * @size: size of the array
  * @array: pointer to the pointer of the first node of
  * array of a size
- *
 */
 typedef struct hash_table_s
 {
@@ -38,5 +37,6 @@ hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+char *hash_table_get(const hash_table_t *ht, const char *key);
 
 #endif /*HASH_TABLES*/
