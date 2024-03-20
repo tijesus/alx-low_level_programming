@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Function that calculates the number of water neighbors a cell has in a grid."""
+"""Function that calculates the water a neighbors cell has in a grid."""
 
 
 def num_water_neighbors(grid, i, j):
@@ -29,13 +29,3 @@ def island_perimeter(grid):
                 perimeter += num_water_neighbors(grid, i, j)
 
     return perimeter
-
-if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-    print(island_perimeter(grid))
